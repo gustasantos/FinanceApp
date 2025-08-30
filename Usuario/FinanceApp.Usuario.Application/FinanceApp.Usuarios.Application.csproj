@@ -1,0 +1,19 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\FinanceApp.Shared\FinanceApp.Shared.csproj" />
+    <ProjectReference Include="..\FinanceApp.Usuario.Domain\FinanceApp.Usuarios.Domain.csproj" />
+    <ProjectReference Include="..\FinanceApp.Usuario.Infrastructure\FinanceApp.Usuarios.Infrastructure.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MediatR" Version="13.0.0" />
+  </ItemGroup>
+
+</Project>
