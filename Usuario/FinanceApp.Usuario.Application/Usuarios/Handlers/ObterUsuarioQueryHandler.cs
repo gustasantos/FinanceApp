@@ -4,7 +4,7 @@ using FinanceApp.Usuarios.Application.Usuarios.Contracts;
 using FinanceApp.Usuarios.Infrastructure.Repository;
 using MediatR;
 
-namespace FinanceApp.Usuario.Application.Usuarios.Handler;
+namespace FinanceApp.Usuario.Application.Usuarios.Handlers;
 
 public class ObterUsuarioQueryHandler(IUsuarioRepository repository)
     : IRequestHandler<ObterUsuarioQuery, Result<UsuarioResponse>>

@@ -5,10 +5,11 @@ namespace FinanceApp.Usuarios.Infrastructure.Repository;
 
 public class UsuarioRepository(UsuarioDbContext context) : IUsuarioRepository
 {
-    public Task AdicionarAsync(Usuario usuario)
+    public async Task<List<Usuario>> ObterTodos()
     {
-        context.Usuarios.Add(usuario);
-        return context.SaveChangesAsync();
+        return await context.Usuarios
+            .AsNoTracking()
+            .ToListAsync();
     }
 
     public async Task<Usuario?> ObterPorIdAsync(Guid id)
@@ -16,5 +17,17 @@ public class UsuarioRepository(UsuarioDbContext context) : IUsuarioRepository
         return await context.Usuarios
             .AsNoTracking()
             .FirstOrDefaultAsync(u => u.Id == id);
+    }
+    
+    public Task AdicionarAsync(Usuario usuario)
+    {
+        context.Usuarios.Add(usuario);
+        return context.SaveChangesAsync();
+    }
+
+    public async Task RemoverAsync(Usuario usuario)
+    {
+        context.Usuarios.Remove(usuario);
+        await context.SaveChangesAsync();
     }
 }

@@ -1,6 +1,6 @@
 using FinanceApp.Financeiro.Application.Despesas.Handlers;
 using FinanceApp.Financeiro.Infrastructure;
-using FinanceApp.Usuario.Application.Usuarios.Handler;
+using FinanceApp.Usuario.Application.Usuarios.Handlers;
 using FinanceApp.Usuarios.Application.Usuarios.Handlers;
 using FinanceApp.Usuarios.Infrastructure;
 using FinanceApp.Usuarios.Infrastructure.Repository;
@@ -22,6 +22,8 @@ builder.Services.AddMediatR(cfg =>
 {
     cfg.RegisterServicesFromAssemblies(
         typeof(RegistrarUsuarioCommandHandler).Assembly, 
+        typeof(DeletarUsuarioCommandHandler).Assembly,
+        typeof(ObterUsuariosQueryHandler).Assembly,
         typeof(ObterUsuarioQueryHandler).Assembly,       
         typeof(RegistrarDespesaCommandHandler).Assembly,
         typeof(ObterDespesasQueryHandler).Assembly

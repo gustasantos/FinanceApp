@@ -10,6 +10,18 @@ namespace FinanceApp.Api.Controllers.Usuarios;
 [Route("api/[controller]")]
 public class UsuarioController(IMediator mediator) : ControllerBase
 {
+    [HttpGet]
+    public async Task<IActionResult> ObterTodosUsuarios()
+    {
+        var query = new ObterUsuariosQuery();
+        var resultado = await mediator.Send(query);
+        
+        if (!resultado.IsSuccess)
+            return NotFound(resultado.Error);
+        
+        return Ok(resultado.Value);
+    }
+    
     [HttpGet("{id:guid}")]
     public async Task<IActionResult> ObterUsuario(Guid id)
     {
@@ -32,5 +44,17 @@ public class UsuarioController(IMediator mediator) : ControllerBase
             return BadRequest(resultado.Error);
 
         return CreatedAtAction(nameof(ObterUsuario), new { id = resultado.Value }, resultado.Value);
+    }
+
+    [HttpDelete]
+    public async Task<IActionResult> DeletarUsuario(Guid id)
+    {
+        var command = new DeletarUsuarioCommand(id);
+        var resultado = await mediator.Send(command);
+        
+        if(!resultado.IsSuccess)
+            return BadRequest(resultado.Error);
+        
+        return Ok(resultado.Message);
     }
 }

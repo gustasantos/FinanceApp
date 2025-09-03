@@ -30,4 +30,12 @@ public class Usuario
         var usuario = new Usuario(Guid.NewGuid(), nome, email);
         return Result<Usuario>.Success(usuario);
     }
+
+    public Result Deletar()
+    {
+        if (Email == "admin@financeapp.com")
+            return Result.Fail("Não é permitido remover o usuário administrador.");
+        
+        return Result.Success();
+    }
 }
