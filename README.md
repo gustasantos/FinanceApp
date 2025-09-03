@@ -2,11 +2,11 @@
 
 **FinanceApp** é um projeto de estudo em .NET com foco em boas práticas de arquitetura, explorando **Domain-Driven Design (DDD)**, **CQRS com MediatR**, **Entity Framework Core** e **separação de contextos**.
 
-## 🎯 Objetivo
+## Objetivo
 
 Este repositório serve como laboratório para praticar conceitos avançados de arquitetura de software aplicados a APIs .NET, com ênfase em **organização de domínios** e **clareza na separação de responsabilidades**.
 
-## 🏛️ Arquitetura
+## Arquitetura
 
 O projeto segue princípios de **Clean Architecture** e **DDD**:
 
@@ -23,7 +23,7 @@ O projeto segue princípios de **Clean Architecture** e **DDD**:
 -   **Shared Kernel** →  
     Módulo compartilhado que contém utilitários comuns, como o padrão `Result<T>` para padronizar retornos de sucesso/erro.
     
-## 🚀 Como executar
+## Como executar
 
 1.  Clone o repositório:
 	```
@@ -48,14 +48,14 @@ O projeto segue princípios de **Clean Architecture** e **DDD**:
 	https://localhost:5001/swagger
 	```
 
-## 📖 Conceitos praticados
+##  Conceitos praticados
 
--   ✅ **DDD** → Separação clara de domínios e responsabilidades.
+-    **DDD** → Separação clara de domínios e responsabilidades.
     
--   ✅ **CQRS/MediatR** → Commands e Queries desacoplados da API.
+-    **CQRS/MediatR** → Commands e Queries desacoplados da API.
     
--   ✅ **EF Core** → Persistência com migrations e DbContexts distintos.
+-    **EF Core** → Persistência com migrations e DbContexts distintos.
     
--   ✅ **Clean Architecture** → Divisão em camadas (`Domain`, `Application`, `Infrastructure`, `Api`).
+-    **Clean Architecture** → Divisão em camadas (`Domain`, `Application`, `Infrastructure`, `Api`).
     
--   ✅ **Shared Kernel** → Reuso de utilitários comuns entre contextos.
+-    **Shared Kernel** → Reuso de utilitários comuns entre contextos.
